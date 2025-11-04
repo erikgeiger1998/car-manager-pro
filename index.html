@@ -8,135 +8,41 @@
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   <style>
     :root{
-      --green-1: #e9fff2;
-      --green-2: #d7f7ea;
       --accent: #29a06a;
       --accent-2: #137a4a;
-      --glass: rgba(255,255,255,0.6);
       --muted: #6b7280;
-      --radius-xl: 24px;
-      --radius-md: 14px;
       --shadow-lg: 0 20px 40px rgba(6,16,26,0.18);
-      --shadow-sm: 0 6px 18px rgba(6,16,26,0.12);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--green-1) 0%, #ffffff 55%);color:#071020}
-    .container{max-width:1100px;margin:48px auto;padding:28px}
-
-    /* Floating dynamic island header */
-    header{display:flex;align-items:center;gap:18px;padding:12px 18px;border-radius:999px;background:linear-gradient(90deg,rgba(255,255,255,0.9),rgba(245,255,250,0.6));box-shadow:var(--shadow-sm);width:fit-content;margin:0 auto}
-    .logo-dot{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
-    h1.title{font-size:28px;margin:0}
-    p.lead{margin:12px 0 0;color:var(--muted)}
-
-    .hero{margin-top:34px;background:linear-gradient(180deg,rgba(255,255,255,0.65),rgba(255,255,255,0.5));border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:1fr 420px;align-items:stretch}
-    @media (max-width:900px){.hero{grid-template-columns:1fr;}}
-
-    .hero-left{padding:36px}
-    .eyebrow{display:inline-block;background:rgba(19,122,74,0.08);color:var(--accent-2);padding:6px 12px;border-radius:999px;font-weight:600;font-size:13px}
-    .headline{font-size:34px;margin:18px 0 8px;line-height:1.05}
-    .sub{color:var(--muted);margin-bottom:20px}
-    .features{display:flex;gap:12px;flex-wrap:wrap}
-    .chip{background:rgba(19,122,74,0.06);padding:10px 14px;border-radius:12px;font-weight:600;color:var(--accent-2);font-size:14px}
-
-    .cta-row{display:flex;gap:12px;margin-top:22px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:12px;border:0;cursor:pointer;font-weight:700}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;box-shadow:0 8px 20px rgba(41,160,106,0.18)}
-    .btn-ghost{background:transparent;border:2px solid rgba(19,122,74,0.12);color:var(--accent-2)}
-
-    /* Right hero image */
-    .hero-right{position:relative;background:linear-gradient(180deg, rgba(0,0,0,0.03), rgba(0,0,0,0.02));display:flex;align-items:center;justify-content:center;padding:18px}
-    .phone-mock{width:100%;max-width:380px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-sm);background:#fff;border:1px solid rgba(6,16,26,0.04)}
-    .phone-mock img{width:100%;height:100%;object-fit:cover;display:block}
-
-    /* Cards */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
-    @media (max-width:900px){.cards{grid-template-columns:repeat(1,1fr)}}
-    .card{background:var(--glass);backdrop-filter:blur(8px);padding:18px;border-radius:16px;box-shadow:var(--shadow-sm);border:1px solid rgba(6,16,26,0.04)}
-    .card h3{margin:0 0 8px}
-    .card p{margin:0;color:var(--muted)}
-
-    footer{margin-top:28px;display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .legal{color:var(--muted);font-size:14px}
-    .footer-actions{display:flex;gap:10px}
-    .link-btn{background:transparent;border:0;padding:8px 12px;border-radius:10px;cursor:pointer;color:var(--accent-2);font-weight:700}
-    .small-note{font-size:13px;color:var(--muted);margin-top:12px}
-
-    /* micro interactions */
-    .btn:active{transform:translateY(1px)}
-    a{color:inherit;text-decoration:none}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:linear-gradient(180deg,#e9fff2 0%, #ffffff 55%);color:#071020;text-align:center;}
+    header{margin-bottom:30px;}
+    .logo-dot{width:60px;height:60px;border-radius:16px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:24px;margin:0 auto 12px;box-shadow:0 8px 20px rgba(41,160,106,0.25)}
+    h1{font-size:32px;margin-bottom:8px;}
+    p{color:var(--muted);margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto;font-size:16px;}
+    .hero-img{display:flex;justify-content:center;align-items:center;}
+    .hero-img img{max-width:90vw;max-height:80vh;border-radius:28px;box-shadow:var(--shadow-lg);object-fit:cover;}
+    footer{margin-top:40px;display:flex;justify-content:center;gap:20px;}
+    a.button{padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:600;transition:0.2s ease;}
+    a.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;}
+    a.primary:hover{opacity:0.9;}
+    a.secondary{border:2px solid rgba(19,122,74,0.3);color:var(--accent-2);}
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="logo-dot">CM</div>
-      <div>
-        <div style="display:flex;align-items:center;gap:8px"><strong style="font-size:16px">Car Manager Pro</strong><span style="color:var(--muted);font-size:12px"> · Drive Smart</span></div>
-        <p style="margin:2px 0 0;color:var(--muted);font-size:13px">Smart fuel, service & expense tracking for every driver.</p>
-      </div>
-    </header>
+  <header>
+    <div class="logo-dot">CM</div>
+    <h1>Car Manager Pro</h1>
+    <p>Drive Smart. Spend Less. Track fuel, maintenance, and expenses with ease.</p>
+  </header>
 
-    <main class="hero" role="main">
-      <section class="hero-left">
-        <div class="eyebrow">All-in-one car management</div>
-        <h2 class="headline">Take control of your vehicle. Save time & money.</h2>
-        <p class="sub">Car Manager Pro helps you track fuel, maintenance, taxes and insurance with a beautiful dashboard. Built for drivers who want clarity and control.</p>
-
-        <div class="features" aria-hidden>
-          <div class="chip">Fuel logs</div>
-          <div class="chip">Service reminders</div>
-          <div class="chip">Expense reports</div>
-          <div class="chip">Multi-vehicle</div>
-        </div>
-
-        <div class="cta-row">
-          <button class="btn btn-primary" onclick="openSignup()">Get Started — it's free</button>
-          <a href="#learn"><button class="btn btn-ghost">How it works</button></a>
-        </div>
-
-        <div class="small-note">Available on iOS & Android • Secure cloud sync • GDPR friendly</div>
-
-        <div class="cards" id="learn" style="margin-top:22px">
-          <div class="card">
-            <h3>Track fuel</h3>
-            <p>Log fills, calculate consumption, and compare costs over time.</p>
-          </div>
-          <div class="card">
-            <h3>Service reminders</h3>
-            <p>Never miss an oil change or inspection — automated reminders keep you on schedule.</p>
-          </div>
-          <div class="card">
-            <h3>Expense reports</h3>
-            <p>Export reports for taxes or fleet accounting in seconds.</p>
-          </div>
-        </div>
-      </section>
-
-      <aside class="hero-right" aria-hidden>
-        <div class="phone-mock" role="img" aria-label="App preview">
-          <img src="https://i.postimg.cc/MZdcWyRr/cover.jpg" alt="Car Manager Pro preview">
-        </div>
-      </aside>
-    </main>
-
-    <footer>
-      <div class="legal">© <span id="year"></span> Car Manager Pro</div>
-      <div class="footer-actions">
-        <a class="link-btn" href="privacy.html">Privacy Policy</a>
-        <a class="link-btn" href="delete-account.html">Request account deletion</a>
-      </div>
-    </footer>
+  <div class="hero-img">
+    <img src="https://i.postimg.cc/MZdcWyRr/cover.jpg" alt="Car Manager Pro App Cover">
   </div>
 
-  <script>
-    // small JS for interactions
-    document.getElementById('year').textContent = new Date().getFullYear();
-    function openSignup(){
-      // simple CTA — replace with real install / deep link later
-      alert('Thanks! Download the app from App Store or Google Play to get started.');
-    }
-  </script>
+  <footer>
+    <a href="privacy.html" class="button secondary">Privacy Policy</a>
+    <a href="delete-account.html" class="button primary">Request Account Deletion</a>
+  </footer>
 </body>
 </html>
